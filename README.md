@@ -3,5 +3,7 @@ Portfolio
 
 Code for the InCahoots portfolio site.
 
-Ruby - 2.1.5
-Rails - 4.2.0
+
+Ruby version: 2.1.5
+
+Rails version: 4.2.0
