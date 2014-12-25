@@ -1,0 +1,23 @@
+# Ignore bundler config.
+/.bundle
+
+# Ignore the default SQLite database.
+/db/*.sqlite3
+/db/*.sqlite3-journal
+
+# Ignore all logfiles and tempfiles.
+/log
+/tmp
+
+# Project resources
+/resources
+
+# Node modules
+/node_modules
+/npm-debug.log
+
+# Ignore backups
+/backups
+
+# Ignore precompiled assets
+/public/assets
