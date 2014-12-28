@@ -9,8 +9,8 @@ FactoryGirl.define do
 
     factory :nature_site do
       title 'Nature website'
-      url 'http://nature.com'
       description 'A website about the birds and the bees and the restless wind rustling through the trees.'
+      url 'http://nature.com'
       content 'Many many many pictures of nature go here.'
     end
 

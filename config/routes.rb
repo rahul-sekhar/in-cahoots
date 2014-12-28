@@ -17,6 +17,6 @@ Rails.application.routes.draw do
   namespace :admin do
     root 'application#home'
 
-    resources :projects, only: [:index, :show]
+    resources :projects, only: [:index, :show, :new, :create, :update]
   end
 end
