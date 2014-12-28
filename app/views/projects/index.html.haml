@@ -1,0 +1,5 @@
+%ul#projects
+  - @projects.each do |project|
+    %li
+      %h2= project.title
+      .decription= project.description
