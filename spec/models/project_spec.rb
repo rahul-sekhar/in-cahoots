@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Project do
+describe Project, type: :model do
   subject { build(:project) }
 
   it 'requires a title' do
