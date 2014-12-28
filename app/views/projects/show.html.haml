@@ -1,0 +1,7 @@
+#project
+  %h2= @project.title
+  .description= @project.description
+  - if @project.url.present?
+    = link_to 'View', @project.url
+
+  .content= @project.content

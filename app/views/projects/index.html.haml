@@ -1,5 +1,6 @@
 %ul#projects
   - @projects.each do |project|
     %li
-      %h2= project.title
-      .decription= project.description
+      = link_to project do
+        %h2= project.title
+        .description= project.description
