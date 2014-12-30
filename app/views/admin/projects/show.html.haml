@@ -1,3 +1,7 @@
+%h2= (@project.new_record? ? 'New project' : 'Edit project')
+
+= link_to 'Back to projects', admin_projects_path
+
 = form_for [:admin, @project] do |f|
 
   = f.label :title
