@@ -11,9 +11,25 @@
 
   li {
     border-bottom: 2px solid;
-    padding: 20px 0;
-    padding-right: 160px;
-    position: relative;
+
+    a {
+      display: block;
+      padding: 20px 0;
+      padding-right: 200px;
+      position: relative;
+
+      &:hover:after {
+        display: block;
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        margin-top: -19px;
+        background-image: image_url('arrow.png');
+        height: 37px;
+        width: 148px;
+      }
+    }
 
     h2 {
       font-family: $serif;
@@ -26,18 +42,6 @@
 
     .description {
       color: $body-color;
-    }
-
-    &:hover:after {
-      display: block;
-      content: '';
-      position: absolute;
-      right: 0;
-      top: 50%;
-      margin-top: -19px;
-      background-image: image_url('arrow.png');
-      height: 37px;
-      width: 148px;
     }
   }
 }
