@@ -1,0 +1,30 @@
+$info-width: 350px;
+
+#project {
+  position: relative;
+  padding: 30px 0;
+
+  .info {
+    position: absolute;
+    left: 0;
+    width: $info-width;
+
+    h2 {
+      font-family: $serif;
+      font-weight: normal;
+      font-size: 30px;
+      color: $pink;
+      margin: 0;
+      margin-bottom: 20px;
+    }
+
+    .description {
+      margin: 0;
+      margin-bottom: 20px;
+    }
+  }
+
+  .content {
+    margin-left: $info-width + 20px;
+  }
+}

@@ -1,7 +1,8 @@
 #project
-  %h2= @project.title
-  .description= @project.description
-  - if @project.url.present?
-    = link_to 'View', @project.url
+  .info
+    %h2= @project.title
+    %p.description= @project.description
+    - if @project.url.present?
+      = link_to 'View', @project.url, target: '_blank'
 
   .content= @project.content
