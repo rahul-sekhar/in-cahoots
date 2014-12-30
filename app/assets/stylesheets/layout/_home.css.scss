@@ -3,5 +3,41 @@
   font-size: 70px;
   margin: 0;
   padding: 30px 0;
-  border-bottom: 2px solid;
+}
+
+#projects {
+  border-top: 2px solid;
+  @include reset-list;
+
+  li {
+    border-bottom: 2px solid;
+    padding: 20px 0;
+    padding-right: 160px;
+    position: relative;
+
+    h2 {
+      font-family: $serif;
+      font-size: 30px;
+      font-weight: normal;
+      color: $pink;
+      margin: 0;
+      margin-bottom: 20px;
+    }
+
+    .description {
+      color: $body-color;
+    }
+
+    &:hover:after {
+      display: block;
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      margin-top: -19px;
+      background-image: image_url('arrow.png');
+      height: 37px;
+      width: 148px;
+    }
+  }
 }
