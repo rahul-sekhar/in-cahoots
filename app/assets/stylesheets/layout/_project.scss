@@ -2,7 +2,34 @@ $info-width: 330px;
 
 #project {
   position: relative;
-  padding: 30px 0;
+  padding-bottom: 30px;
+
+  .nav {
+    border-bottom: 1px solid $grey-2;
+    margin-bottom: 30px;
+    padding: 20px 0;
+    overflow: hidden;
+    font-size: 14px;
+
+    a {
+      color: $body-color;
+    }
+
+    .title {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .next {
+      float: right;
+      text-align: right;
+    }
+
+    .previous {
+      float: left;
+    }
+  }
 
   .info {
     position: absolute;

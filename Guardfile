@@ -2,5 +2,5 @@
 # More info at https://github.com/guard/guard#readme
 
 guard 'livereload' do
-  watch(%r{(app|vendor)(/assets/\w+/(.+\.(css))).*}) { |m| "/assets/#{m[3]}" }
+  watch(%r{(app|vendor)(/assets/\w+/(.+)\.scss).*}) { |m| "/assets/#{m[3]}.css" }
 end
