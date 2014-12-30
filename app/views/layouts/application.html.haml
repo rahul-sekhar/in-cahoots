@@ -13,9 +13,18 @@
   = javascript_include_tag "application", "data-turbolinks-track" => true
   = csrf_meta_tags
 
-  %body
-    %header#header
-      %h1 InCahoots
+  = external_resources
 
-    #content
-      = yield
+  %body
+    #wrapper
+      %header#header
+        %h1 InCahoots
+
+        %ul#navigation
+          %li= link_to 'Work', root_path
+          %li= link_to 'What we do', '#'
+          %li= link_to 'About us', '#'
+          %li= link_to 'Get in touch', '#'
+
+      #content
+        = yield

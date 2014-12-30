@@ -15,6 +15,9 @@ gem 'devise'
 
 group :development do
   gem 'thin'
+
+  gem 'guard', require: false
+  gem 'guard-livereload', require: false
 end
 
 group :development, :test do

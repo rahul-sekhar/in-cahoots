@@ -1,0 +1,28 @@
+$bottom-padding: 5px;
+
+#header {
+  border-bottom: 2px solid;
+  position: relative;
+  padding-bottom: $bottom-padding;
+
+  h1 {
+    margin: 0;
+    font-weight: 500;
+  }
+}
+
+#navigation {
+  @include reset-list;
+  position: absolute;
+  bottom: 4px + $bottom-padding;
+  left: 350px;
+
+  li {
+    float: left;
+    margin-right: 25px;
+  }
+
+  a {
+    color: $body-color;
+  }
+}
