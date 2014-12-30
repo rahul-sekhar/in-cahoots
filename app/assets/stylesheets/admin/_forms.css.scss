@@ -1,0 +1,25 @@
+form {
+  padding: 20px 0;
+}
+
+.field {
+  margin-bottom: 20px;
+
+  label {
+    display: inline-block;
+    width: 120px;
+    margin-right: 10px;
+    text-align: right;
+    vertical-align: top;
+  }
+
+  input {
+    width: 400px;
+  }
+
+  textarea {
+    width: 400px;
+    height: 150px;
+    resize: vertical;
+  }
+}

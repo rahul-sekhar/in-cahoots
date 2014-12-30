@@ -1,5 +1,7 @@
 %h2 Projects
 
+= link_to "Back to home", admin_root_path
+
 %ul#projects
   - @projects.each do |project|
     %li= link_to project.title, admin_project_path(project)
