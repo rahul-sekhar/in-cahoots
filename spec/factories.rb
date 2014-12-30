@@ -19,5 +19,10 @@ FactoryGirl.define do
       description 'Invitations for a wedding.'
       content 'It was a good wedding.'
     end
+
+    factory :book_site do
+      title 'Books'
+      description 'A book store.'
+    end
   end
 end

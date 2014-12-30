@@ -1,4 +1,17 @@
 #project
+  %nav.nav
+    - if @project.previous
+      .previous
+        = link_to @project.previous do
+          %span.title Previous project
+          %span= @project.previous.title
+
+    - if @project.next
+      .next
+        = link_to @project.next do
+          %span.title Next project
+          %span= @project.next.title
+
   .info
     %h2= @project.title
     %p.description= @project.description
