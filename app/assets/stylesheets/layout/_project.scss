@@ -21,6 +21,12 @@ $info-width: 330px;
       margin-bottom: 5px;
     }
 
+    .next, .previous {
+      a {
+        display: block;
+      }
+    }
+
     .next {
       float: right;
       text-align: right;
