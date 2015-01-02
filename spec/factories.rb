@@ -25,4 +25,10 @@ FactoryGirl.define do
       description 'A book store.'
     end
   end
+
+  factory :project_image do
+    image_file_name { 'test.jpg' }
+    image_content_type { 'image/jpeg' }
+    image_file_size { 1024 }
+  end
 end

@@ -18,4 +18,4 @@
     - if @project.url.present?
       = link_to 'View', @project.url, target: '_blank'
 
-  .content= @project.content.html_safe
+  .content= @project.content.to_s.html_safe
