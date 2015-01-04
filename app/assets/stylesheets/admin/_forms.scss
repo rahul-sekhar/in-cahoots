@@ -17,6 +17,10 @@ form {
     width: 400px;
   }
 
+  input[type=file] {
+    vertical-align: top;
+  }
+
   textarea {
     width: 400px;
     height: 150px;

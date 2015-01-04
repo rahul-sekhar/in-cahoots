@@ -12,6 +12,7 @@ FactoryGirl.define do
       description 'A website about the birds and the bees and the restless wind rustling through the trees.'
       url 'http://nature.com'
       content 'Many many many pictures of nature go here.'
+      image File.new(Rails.root.join('spec', 'fixtures', 'files', 'image-1.jpg'))
     end
 
     factory :wedding_invitation do
@@ -24,11 +25,5 @@ FactoryGirl.define do
       title 'Books'
       description 'A book store.'
     end
-  end
-
-  factory :project_image do
-    image_file_name { 'test.jpg' }
-    image_content_type { 'image/jpeg' }
-    image_file_size { 1024 }
   end
 end

@@ -29,6 +29,7 @@ describe 'Manage projects', type: :feature do
     fill_in 'Description', with: 'Super fresh'
     fill_in 'URL', with: 'http://fresh-fresh.com'
     fill_in 'Content', with: 'Freshness is hard to describe'
+    attach_file 'Image', Rails.root.join('spec', 'fixtures', 'files', 'image.jpg')
 
     click_on 'Create'
 
@@ -39,6 +40,7 @@ describe 'Manage projects', type: :feature do
     expect(project.description).to eq 'Super fresh'
     expect(project.url).to eq 'http://fresh-fresh.com'
     expect(project.content).to eq 'Freshness is hard to describe'
+    expect(project.image_file_name).to eq 'image.jpg'
   end
 
   specify 'Edit a project' do
@@ -48,11 +50,13 @@ describe 'Manage projects', type: :feature do
     expect(page).to have_field 'Description', with: 'A website about the birds and the bees and the restless wind rustling through the trees.'
     expect(page).to have_field 'URL', with: 'http://nature.com'
     expect(page).to have_field 'Content', with: 'Many many many pictures of nature go here.'
+    expect(page).to have_image 'image-1.jpg'
 
     fill_in 'Title', with: 'Forest website'
     fill_in 'Description', with: 'A website about just forests'
     fill_in 'URL', with: 'http://forests.com'
     fill_in 'Content', with: 'Forests, forests, forests!'
+    attach_file 'Image', Rails.root.join('spec', 'fixtures', 'files', 'image.jpg')
 
     click_on 'Save'
 
@@ -65,5 +69,6 @@ describe 'Manage projects', type: :feature do
     expect(nature_site.description).to eq 'A website about just forests'
     expect(nature_site.url).to eq 'http://forests.com'
     expect(nature_site.content).to eq 'Forests, forests, forests!'
+    expect(nature_site.image_file_name).to eq 'image.jpg'
   end
 end

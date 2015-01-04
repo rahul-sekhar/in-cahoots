@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150102042313) do
+ActiveRecord::Schema.define(version: 20150104140158) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "username",            default: "", null: false
@@ -28,15 +28,6 @@ ActiveRecord::Schema.define(version: 20150102042313) do
 
   add_index "admins", ["username"], name: "index_admins_on_username", unique: true
 
-  create_table "project_images", force: :cascade do |t|
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "projects", force: :cascade do |t|
     t.string   "title"
     t.string   "url"
@@ -44,6 +35,10 @@ ActiveRecord::Schema.define(version: 20150102042313) do
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
 end

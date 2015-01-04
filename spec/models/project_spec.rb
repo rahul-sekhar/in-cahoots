@@ -8,6 +8,18 @@ describe Project, type: :model do
     expect(subject).to be_invalid
   end
 
+  describe 'image' do
+    it 'can be an image' do
+      subject.image = File.new(Rails.root.join('spec', 'fixtures', 'files', 'image.jpg'))
+      expect(subject).to be_valid
+    end
+
+    it 'cannot be a non-image file' do
+      subject.image = File.new(Rails.root.join('spec', 'fixtures', 'files', 'doc.txt'))
+      expect(subject).to be_invalid
+    end
+  end
+
   describe 'previous and next' do
     before do
       @proj1 = create(:project)

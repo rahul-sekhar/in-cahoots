@@ -12,3 +12,6 @@
 
 # Project resources
 /resources
+
+# Uploads
+/public/system
