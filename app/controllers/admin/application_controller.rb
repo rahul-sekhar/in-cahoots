@@ -3,6 +3,8 @@ class Admin::ApplicationController < ActionController::Base
 
   before_action :store_location_and_authenticate
 
+  layout 'admin/application'
+
   def home
   end
 

@@ -12,11 +12,27 @@
 
   li {
     border-bottom: 2px solid;
+    display: table;
 
     a {
-      display: block;
+      display: table-row;
       padding: 20px 0;
-      padding-right: 200px;
+    }
+
+    .image {
+      display: table-cell;
+      vertical-align: middle;
+      width: 290px;
+
+      img {
+        display: block;
+      }
+    }
+
+    .info {
+      display: table-cell;
+      vertical-align: middle;
+      padding: 20px 200px 20px 40px;
       position: relative;
 
       &:hover:after {

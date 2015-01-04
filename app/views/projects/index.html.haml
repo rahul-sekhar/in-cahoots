@@ -5,5 +5,9 @@
   - @projects.each do |project|
     %li
       = link_to project do
-        %h2= project.title
-        %p.description= project.description
+        .image
+          - if project.image.present?
+            = image_tag project.image.url(:medium)
+        .info
+          %h2= project.title
+          %p.description= project.description
