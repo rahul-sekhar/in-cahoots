@@ -38,4 +38,8 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  # Paperclip setup
+  config.paperclip_root_url = '/storage'
+  config.paperclip_root_path = Rails.root.join('public', 'storage')
 end
