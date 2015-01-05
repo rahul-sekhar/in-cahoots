@@ -1,0 +1,32 @@
+#!/usr/bin/env ruby
+oldrev, newrev = ARGV
+
+def run(cmd)
+  exit($?.exitstatus) unless system "umask 002 && #{cmd}"
+end
+
+bundler_args = ['--deployment']
+BUNDLE_WITHOUT = ENV['BUNDLE_WITHOUT'] || 'development:test'
+bundler_args << '--without' << BUNDLE_WITHOUT unless BUNDLE_WITHOUT.empty?
+
+puts "Updating bundle"
+run "bundle install #{bundler_args.join(' ')}"
+
+def rake_task(task)
+  run "bundle exec rake #{task}"
+end
+
+puts "Migrating database"
+rake_task "db:migrate"
+
+puts "Precompiling assets"
+rake_task "assets:precompile"
+
+puts "Cleaning assets"
+rake_task "assets:clean"
+
+# clear cached assets (unversioned/ignored files)
+run "git clean -x -f -- public/stylesheets public/javascripts"
+
+# clean unversioned files from vendor/plugins (e.g. old submodules)
+run "git clean -d -f -- vendor/plugins"

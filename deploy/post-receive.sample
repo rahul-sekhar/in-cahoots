@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -e
+
+echo "Updating files"
+export GIT_WORK_TREE=...
+git checkout -f master
+git submodule sync && git submodule update --init --recursive
+
+cd $GIT_WORK_TREE
+
+run deploy/before_restart
+run deploy/restart && run deploy/after_restart
