@@ -50,7 +50,7 @@ describe 'Manage projects', type: :feature do
     expect(page).to have_field 'Description', with: 'A website about the birds and the bees and the restless wind rustling through the trees.'
     expect(page).to have_field 'URL', with: 'http://nature.com'
     expect(page).to have_field 'Content', with: 'Many many many pictures of nature go here.'
-    expect(page).to have_image 'image-1.jpg'
+    expect(page).to have_image 'nature.jpg'
 
     fill_in 'Title', with: 'Forest website'
     fill_in 'Description', with: 'A website about just forests'

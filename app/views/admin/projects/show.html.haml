@@ -23,6 +23,8 @@
     = f.text_field :url
 
   .field
+    %div
+      = link_to 'Images', admin_content_images_path, target: '_blank'
     = f.label :content
     = f.text_area :content
 

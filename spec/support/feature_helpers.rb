@@ -1,3 +1,13 @@
+module Capybara
+  module Node
+    class Element
+      def parent
+        find(:xpath, '..')
+      end
+    end
+  end
+end
+
 module FeatureHelpers
   def login
     create(:admin)

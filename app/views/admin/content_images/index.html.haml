@@ -1,0 +1,19 @@
+%h2 Content Images
+
+= link_to "Back to home", admin_root_path
+
+%ul
+  - @content_images.each do |content_image|
+    %li
+      = image_tag content_image.image.url(:thumb)
+      %p= content_image.image.url(:w1200)
+      = link_to 'Delete', admin_content_image_path(content_image), confirm: 'Are you sure you want to delete this image?', method: :delete
+
+.add
+  %h3 Add an image
+  = form_for [:admin, @new_content_image] do |f|
+    .field
+      = f.label :image
+      = f.file_field :image
+
+    = f.submit 'Add'

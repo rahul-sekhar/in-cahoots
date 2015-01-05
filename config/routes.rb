@@ -18,5 +18,7 @@ Rails.application.routes.draw do
     root 'application#home'
 
     resources :projects, only: [:index, :show, :new, :create, :update]
+
+    resources :content_images, only: [:index, :create, :destroy]
   end
 end

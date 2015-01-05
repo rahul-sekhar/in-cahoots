@@ -39,7 +39,8 @@ RSpec.configure do |config|
     FileUtils.rm_rf(Rails.root.join('public', 'test_storage'))
   end
 
-  config.include FeatureHelpers, type: :feature
-
   config.include Devise::TestHelpers, type: :controller
+
+  config.include GeneralHelpers
+  config.include FeatureHelpers, type: :feature
 end

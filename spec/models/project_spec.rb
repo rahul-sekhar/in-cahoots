@@ -9,13 +9,18 @@ describe Project, type: :model do
   end
 
   describe 'image' do
+    before do
+      subject.image_file_name = 'some-file'
+      subject.image_file_size = 1024
+      subject.image_content_type = 'image/jpeg'
+    end
+
     it 'can be an image' do
-      subject.image = File.new(Rails.root.join('spec', 'fixtures', 'files', 'image.jpg'))
       expect(subject).to be_valid
     end
 
     it 'cannot be a non-image file' do
-      subject.image = File.new(Rails.root.join('spec', 'fixtures', 'files', 'doc.txt'))
+      subject.image_content_type = 'application/pdf'
       expect(subject).to be_invalid
     end
   end
