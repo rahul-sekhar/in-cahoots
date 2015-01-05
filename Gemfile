@@ -15,6 +15,8 @@ gem 'devise'
 
 gem 'paperclip'
 
+gem 'unicorn'
+
 group :development do
   gem 'thin'
 
