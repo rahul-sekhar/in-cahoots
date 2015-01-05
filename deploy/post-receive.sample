@@ -1,12 +1,26 @@
 #!/usr/bin/env bash
 set -e
+oldrev=$1
+newrev=$2
 
-echo "Updating files"
+run() {
+  [ -x $1 ] && $1 $oldrev $newrev
+}
+
+source /usr/local/share/chruby/chruby.sh
+
 export GIT_WORK_TREE=...
-git checkout -f master
-git submodule sync && git submodule update --init --recursive
 
+echo files changed: $(git diff $oldrev $newrev --diff-filter=ACDMR --name-only | wc -l)
+
+echo "Updating files in $GIT_WORK_TREE"
+git checkout -f master
 cd $GIT_WORK_TREE
 
+echo "Using ruby version $(< ruby-version)"
+chruby "$(< ruby-version)"
+
+echo "Running before restart tasks..."
 run deploy/before_restart
-run deploy/restart && run deploy/after_restart
+echo "Restarting..."
+run deploy/restart && echo "Running after restart tasks..." && run deploy/after_restart
