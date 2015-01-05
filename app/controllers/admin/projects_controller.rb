@@ -33,6 +33,12 @@ class Admin::ProjectsController < Admin::ApplicationController
     end
   end
 
+  def destroy
+    @project = Project.find(params[:id])
+    @project.destroy!
+    redirect_to admin_projects_path
+  end
+
   private
 
   def project_params

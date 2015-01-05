@@ -71,4 +71,15 @@ describe 'Manage projects', type: :feature do
     expect(nature_site.content).to eq 'Forests, forests, forests!'
     expect(nature_site.image_file_name).to eq 'image.jpg'
   end
+
+  specify 'Delete a project' do
+    visit admin_project_path(nature_site)
+
+    click_on 'Delete'
+
+    expect(current_path).to eq admin_projects_path
+    expect(page).to have_no_content 'Nature website'
+
+    expect_to_be_destroyed(nature_site)
+  end
 end

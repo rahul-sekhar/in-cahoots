@@ -176,4 +176,26 @@ describe Admin::ProjectsController, type: :controller do
       end
     end
   end
+
+  # Destroy
+
+  describe 'DELETE destroy' do
+    let(:make_request){ delete :destroy, id: project.id }
+    let(:project){ FactoryGirl.create(:project) }
+
+    it 'has a 302 status' do
+      make_request
+      expect(response.status).to eq 302
+    end
+
+    it 'deletes the project' do
+      make_request
+      expect_to_be_destroyed project
+    end
+
+    it 'redirects to the projects page' do
+      make_request
+      expect(response).to redirect_to admin_projects_path
+    end
+  end
 end

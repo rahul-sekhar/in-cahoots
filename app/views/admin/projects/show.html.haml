@@ -29,3 +29,6 @@
     = f.text_area :content
 
   = f.submit (@project.new_record? ? 'Create' : 'Save')
+
+  - unless @project.new_record?
+    = link_to 'Delete', admin_project_path(@project), method: :delete
