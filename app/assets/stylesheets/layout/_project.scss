@@ -30,10 +30,30 @@ $info-width: 330px;
     .next {
       float: right;
       text-align: right;
+      position: relative;
+      padding-right: 20px;
+
+      a:after {
+        position: absolute;
+        content: '\e800';
+        @include icon;
+        top: 0;
+        right: 0;
+      }
     }
 
     .previous {
       float: left;
+      position: relative;
+      padding-left: 20px;
+
+      a:before {
+        position: absolute;
+        content: '\e801';
+        @include icon;
+        top: 0;
+        left: 0;
+      }
     }
   }
 
