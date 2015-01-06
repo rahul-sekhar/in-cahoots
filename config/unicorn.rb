@@ -7,7 +7,7 @@ timeout 15
 preload_app true
 
 pid "#{APP_ROOT}/tmp/pids/unicorn.pid"
-# listen "#{APP_ROOT}/tmp/sockets/unicorn.sock"
+listen "#{APP_ROOT}/tmp/sockets/unicorn.sock"
 
 stderr_path "#{APP_ROOT}/log/unicorn.stderr.log"
 stdout_path "#{APP_ROOT}/log/unicorn.stdout.log"
