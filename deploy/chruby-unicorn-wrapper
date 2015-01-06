@@ -5,5 +5,4 @@ PORT=8080
 
 source /usr/local/share/chruby/chruby.sh && \
 chruby $RUBY_VERSION && \
-pwd && \
 bundle exec unicorn -c $APP_PATH/config/unicorn.rb -p $PORT -D
