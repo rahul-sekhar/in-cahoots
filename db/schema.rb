@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150105062633) do
+ActiveRecord::Schema.define(version: 20150106092421) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "username",            default: "", null: false
@@ -49,5 +49,16 @@ ActiveRecord::Schema.define(version: 20150105062633) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
   end
+
+  create_table "settings", force: :cascade do |t|
+    t.string   "var",                   null: false
+    t.text     "value"
+    t.integer  "thing_id"
+    t.string   "thing_type", limit: 30
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "settings", ["thing_type", "thing_id", "var"], name: "index_settings_on_thing_type_and_thing_id_and_var", unique: true
 
 end

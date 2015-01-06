@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   namespace :admin do
     root 'application#home'
 
+    post 'blurb' => 'application#blurb'
+
     resources :projects, only: [:index, :show, :new, :create, :update, :destroy]
 
     resources :content_images, only: [:index, :create, :destroy]

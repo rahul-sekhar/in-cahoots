@@ -8,6 +8,11 @@ class Admin::ApplicationController < ActionController::Base
   def home
   end
 
+  def blurb
+    Settings.home_page_blurb = params[:blurb]
+    redirect_to admin_root_url
+  end
+
   private
 
   def store_location

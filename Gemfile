@@ -17,6 +17,8 @@ gem 'paperclip'
 
 gem 'unicorn'
 
+gem 'rails-settings-cached'
+
 group :development do
   gem 'thin'
 
