@@ -1,0 +1,9 @@
+#!/bin/bash
+APP_PATH=$(dirname $(dirname $(readlink -f $0)))
+RUBY_VERSION=$(< $APP_PATH/ruby-version)
+PORT=8080
+
+source /usr/local/share/chruby/chruby.sh && \
+chruby $RUBY_VERSION && \
+pwd && \
+bundle exec unicorn -c $APP_PATH/config/unicorn.rb -p $PORT -D
