@@ -76,4 +76,8 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # Paperclip setup
+  config.paperclip_root_url = '/storage'
+  config.paperclip_root_path = Rails.root.join('public', 'storage')
 end
