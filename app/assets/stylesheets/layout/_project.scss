@@ -62,6 +62,10 @@ $info-width: 330px;
     left: 0;
     width: $info-width;
 
+    &.is_stuck {
+      left: auto;
+    }
+
     h2 {
       font-family: $serif;
       font-weight: normal;
@@ -74,10 +78,15 @@ $info-width: 330px;
     .description {
       margin: 0;
       margin-bottom: 20px;
+      font-size: 14px;
     }
   }
 
   .content {
     margin-left: $info-width + 20px;
+
+    img {
+      border: 1px solid #ddd;
+    }
   }
 }
