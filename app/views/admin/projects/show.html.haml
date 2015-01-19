@@ -9,6 +9,10 @@
     = f.text_field :title
 
   .field
+    = f.label :weight
+    = f.text_field :weight
+
+  .field
     = f.label :image
     - if @project.image.present?
       = image_tag @project.image.url(:medium)

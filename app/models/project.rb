@@ -11,11 +11,13 @@ class Project < ActiveRecord::Base
   validates :image,
     attachment_content_type: { content_type: /\Aimage\/.*\Z/ }
 
+  scope :weighted, -> { order 'weight DESC' }
+
   def next
-    self.class.where('id > ?', id).first
+    self.class.where('(weight = ? AND id > ?) OR (weight < ?)', weight, id, weight).weighted.first
   end
 
   def previous
-    self.class.where('id < ?', id).last
+    self.class.where('(weight = ? AND id < ?) OR (weight > ?)', weight, id, weight).weighted.last
   end
 end
