@@ -1,9 +1,9 @@
 class Admin::ApplicationController < ActionController::Base
+  layout 'admin'
+
   protect_from_forgery with: :exception
 
   before_action :store_location_and_authenticate
-
-  layout 'admin/application'
 
   def home
   end
