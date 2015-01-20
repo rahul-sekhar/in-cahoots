@@ -1,5 +1,5 @@
 $ = jQuery
-$(document).on 'ready', ->
+$(document).on 'page:load', ->
   $('#project .info').stick_in_parent({
     bottoming: false
   })

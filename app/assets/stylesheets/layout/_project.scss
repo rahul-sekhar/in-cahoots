@@ -6,7 +6,6 @@ $info-width: 330px;
 
   .nav {
     border-bottom: 1px solid $grey-2;
-    margin-bottom: 30px;
     padding: 20px 0;
     overflow: hidden;
     font-size: 14px;
@@ -88,5 +87,9 @@ $info-width: 330px;
     img {
       border: 1px solid #ddd;
     }
+  }
+
+  .info, .content {
+    padding-top: 30px;
   }
 }
